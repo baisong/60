@@ -74,7 +74,7 @@
             next = 'play';
           }
           $('#jumbotron-btn').removeClass(curr).addClass(next);
-          $('#jumbotron-btn .action-icon').removeclass('glyphicon-' + curr).addClass('glyphicon-' + next);
+          $('#jumbotron-btn .action-icon').removeClass('glyphicon-' + curr).addClass('glyphicon-' + next);
           $('#jumbotron-btn .action-name').text(next);
         });
         
