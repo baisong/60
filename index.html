@@ -31,9 +31,9 @@
         <p id="syllable" class="lead" data-meaningful="true" ct-id="1">py</p>
         <p id="decimal">0</p>
         <p>
-          <a class="btn btn-lg btn-success" href="#" role="button">
+          <a id="jumbotron-btn" class="btn btn-lg btn-success btn-disabled" href="#" role="button">
         	<span class="glyphicon glyphicon-play"></span>
-        	<span class="action-name">Play</span>
+        	<span class="action-name">Loading...</span>
         	</a>
         </p>
       </div>
@@ -57,6 +57,14 @@
     </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script>
+    (function($){
+      $(document).ready(function(){
+        $('#jumbotron-btn').removeClass('btn-disabled');
+        $('.action-name').text('Play');
+      });
+    })(jQuery);
+    </script>
   </body>
 </html>
 
