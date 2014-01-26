@@ -32,8 +32,8 @@
         <p id="decimal">0</p>
         <p>
           <a id="jumbotron-btn" class="btn btn-lg btn-success btn-disabled" href="#" role="button">
-        	<span class="glyphicon glyphicon-play"></span>
-        	<span class="action-name">Loading...</span>
+        	  <span class="action-icon glyphicon glyphicon-play"></span>
+        	  <span class="action-name">Loading...</span>
         	</a>
         </p>
       </div>
@@ -60,8 +60,25 @@
     <script>
     (function($){
       $(document).ready(function(){
-        $('#jumbotron-btn').removeClass('btn-disabled');
+        
+        // Starts play mode.
+        $('#jumbotron-btn').removeClass('btn-disabled').addClass('play');
         $('.action-name').text('Play');
+        
+        // Handles pausing.
+        $('#jumbotron-btn .pause').click(function(){
+          $('#jumbotron-btn').removeClass('pause').addClass('play');
+          $('#jumbotron-btn .action-icon').removeclass('glyphicon-pause').addClass('glyphicon-play');
+          $('#jumbotron-btn .action-name').text('Play');
+        });
+        
+        // Handles playing.
+        $('#jumbotron-btn .play').click(function(){
+          $('#jumbotron-btn').removeClass('play').addClass('pause');
+          $('#jumbotron-btn .action-icon').removeclass('glyphicon-play').addClass('glyphicon-pause');
+          $('#jumbotron-btn .action-name').text('Pause');
+        });
+        
       });
     })(jQuery);
     </script>
