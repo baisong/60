@@ -31,9 +31,20 @@
         <p id="syllable" class="lead" data-meaningful="true" ct-id="1">py</p>
         <p id="decimal">0</p>
         <p>
-          <a id="jumbotron-btn" class="btn btn-lg btn-success btn-disabled" href="#" role="button">
+          <a class="action action-play btn btn-lg btn-primary" href="#" role="button">
         	  <span class="action-icon glyphicon glyphicon-play"></span>
-        	  <span class="action-name">Loading...</span>
+        	</a>
+        	<a class="action action-pause btn btn-lg btn-primary" href="#" role="button">
+        	  <span class="action-icon glyphicon glyphicon-pause"></span>
+        	</a>
+        	<a class="action action-reset btn btn-lg btn-primary" href="#" role="button">
+        	  <span class="action-icon glyphicon glyphicon-step-backward"></span>
+        	</a>
+        	<a class="action action-slow btn btn-lg btn-primary" href="#" role="button">
+        	  <span class="action-icon glyphicon glyphicon-minus"></span>
+        	</a>
+        	<a class="action action-fast btn btn-lg btn-primary" href="#" role="button">
+        	  <span class="action-icon glyphicon glyphicon-plus"></span>
         	</a>
         </p>
       </div>
@@ -78,7 +89,7 @@
           $('#jumbotron-btn .action-name').text(next);
         });
         
-      });
+      });	
     })(jQuery);
     </script>
   </body>
