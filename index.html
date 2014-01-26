@@ -65,18 +65,17 @@
         $('#jumbotron-btn').removeClass('btn-disabled').addClass('play');
         $('.action-name').text('Play');
         
-        // Handles pausing.
-        $('.pause').click(function(){
-          $('#jumbotron-btn').removeClass('pause').addClass('play');
-          $('#jumbotron-btn .action-icon').removeclass('glyphicon-pause').addClass('glyphicon-play');
-          $('#jumbotron-btn .action-name').text('Play');
-        });
-        
-        // Handles playing.
-        $('.play').click(function(){
-          $('#jumbotron-btn').removeClass('play').addClass('pause');
-          $('#jumbotron-btn .action-icon').removeclass('glyphicon-play').addClass('glyphicon-pause');
-          $('#jumbotron-btn .action-name').text('Pause');
+        // Handles pausing and playing.
+        $('#jumbotron-btn').click(function(){
+          var curr = 'play';
+          var next = 'pause';
+          if ($('.pause').length) {
+            curr = 'pause';
+            next = 'play';
+          }
+          $('#jumbotron-btn').removeClass(curr).addClass(next);
+          $('#jumbotron-btn .action-icon').removeclass('glyphicon-' + curr).addClass('glyphicon-' + next);
+          $('#jumbotron-btn .action-name').text(next);
         });
         
       });
