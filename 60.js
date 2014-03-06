@@ -59,13 +59,14 @@ Sixty.items = [
     // Handles playing.
     $('.action-play').click(function(){
       console.log('Play!');
-      setInterval(goSixty, Sixty.delay);
+      Sixty.cycle = setInterval(goSixty, Sixty.delay);
     });
     
     // Handles pausing.
     $('.action-play').click(function(){
       console.log('Stop!');
-      clearInterval();
+      clearInterval(Sixty.cycle);
     });
   });	
 })(jQuery);
+
