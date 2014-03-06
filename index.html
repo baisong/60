@@ -69,30 +69,7 @@
     </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-    <script>
-    (function($){
-      $(document).ready(function(){
-        
-        // Starts play mode.
-        $('#jumbotron-btn').removeClass('btn-disabled').addClass('play');
-        $('.action-name').text('Play');
-        
-        // Handles pausing and playing.
-        $('#jumbotron-btn').click(function(){
-          var curr = 'play';
-          var next = 'pause';
-          if ($('.pause').length) {
-            curr = 'pause';
-            next = 'play';
-          }
-          $('#jumbotron-btn').removeClass(curr).addClass(next);
-          $('#jumbotron-btn .action-icon').removeClass('glyphicon-' + curr).addClass('glyphicon-' + next);
-          $('#jumbotron-btn .action-name').text(next);
-        });
-        
-      });	
-    })(jQuery);
-    </script>
+    <script src="60.js"></script>
   </body>
 </html>
 
