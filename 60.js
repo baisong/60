@@ -42,7 +42,8 @@ Sixty.items = [
    */
   function goSixty() {
     console.log('go!');
-    var offset = Sixty.items[Sixty.offset];
+    var offset = Sixty.offset;
+    //var items = Sixty.items[Sixty.offset];
     $('#character').text(getCharacter(offset));
     $('#syllable').text(getSyllable(offset));
     $('#decimal').text(offset);
