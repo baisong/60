@@ -63,7 +63,7 @@ Sixty.items = [
     });
     
     // Handles pausing.
-    $('.action-play').click(function(){
+    $('.action-pause').click(function(){
       console.log('Stop!');
       clearInterval(Sixty.cycle);
     });
