@@ -1,34 +1,51 @@
 var Sixty = Sixty || { 'delay': 1000, 'offset': 0, 'speed': 0 };
 Sixty.items = [
-  {
-    char: '0',
-    syllable: 'py',
-    decimal: '0'
-  },
-  {
-    char: '1',
-    syllable: 'pe',
-    decimal: '1'
-  },
-  {
-    char: '2',
-    syllable: 'pi',
-    decimal: '2'
-  },
-  {
-    char: '3',
-    syllable: 'pa',
-    decimal: '3'
-  },
+  {},{},{},{},{},{},{},{},{},{},{},{},
+  {},{},{},{},{},{},{},{},{},{},{},{},
+  {},{},{},{},{},{},{},{},{},{},{},{},
+  {},{},{},{},{},{},{},{},{},{},{},{},
+  {},{},{},{},{},{},{},{},{},{},{},{}
 ];
 
 (function($){
+  /**
+   *
+   */
+  function getCharacter(offset) {
+    var characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWX';
+    character = '-';
+    if (offset < characters.length) {
+      character = characters[offset];
+    }
+    
+    return character;
+  }
+  
+  /**
+   *
+   */
+  function getSyllable(offset) {
+    syllable = 'CVN?';
+    c = 'pmtlk';
+    v = ['y','e','i','a','u','o','yn','on','un','an','in','en'];
+    cOffset = Math.floor(offset / 12);
+    vOffset = offset % 12;
+    if (cOffset < c.length && vOffset < v.length) {
+      syllable = c[cOffset] + v[vOffset];
+    }
+    
+    return syllable;
+  }
+  
+  /**
+   *
+   */
   function goSixty() {
     console.log('go!');
-    var item = Sixty.items[Sixty.offset];
-    $('#character').text(item.char);
-    $('#syllable').text(item.syllable);
-    $('#decimal').text(item.decimal);
+    var offset = Sixty.items[Sixty.offset];
+    $('#character').text(getCharacter(offset);
+    $('#syllable').text(getSyllable(offset));
+    $('#decimal').text(offset);
     Sixty.offset = (Sixty.offset + 1) % Sixty.items.length;
   }
   
@@ -38,11 +55,16 @@ Sixty.items = [
     $('#jumbotron-btn').removeClass('btn-disabled').addClass('play');
     $('.action-name').text('Play');
     
-    // Handles pausing and playing.
+    // Handles playing.
     $('.action-play').click(function(){
       console.log('Play!');
       setInterval(goSixty, Sixty.delay);
     });
     
+    // Handles pausing.
+    $('.action-play').click(function(){
+      console.log('Stop!');
+      clearInterval();
+    });
   });	
 })(jQuery);
