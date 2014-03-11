@@ -42,7 +42,7 @@ Sixty.items = [
    */
   function goSixtyColorGrid() {
 		var numColors = 60;
-		var numRows = 1;
+		var numRows = 5;
 		var numCells = Math.floor(numColors / numRows);
 		var output = '<table>';
 		for (var i = 0; i < numRows; i++) {
