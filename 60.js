@@ -116,7 +116,8 @@ Sixty.items = [
     $('#character').text(getCharacter(offset));
     $('#syllable').text(getSyllable(offset));
     $('#decimal').text(offset);
-    $('.jumbotron').css('background-color', getColor(offset));
+    var color = getColor(offset);
+    $('.jumbotron').css('background-color', color);
     Sixty.offset = (Sixty.offset + 1) % Sixty.items.length;
   }
   
