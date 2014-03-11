@@ -55,7 +55,7 @@ Sixty.items = [
     // Starts play mode.
     $('#jumbotron-btn').removeClass('btn-disabled').addClass('play');
     $('.action-name').text('Play');
-    
+    $('#message-1').html('<table><tr><td>Test</td><td>123</td></tr></table>');
     // Handles playing.
     $('.action-play').click(function(){
       console.log('Play!');
