@@ -82,9 +82,9 @@ Sixty.items = [
 		for (var i = 0; i < numRows; i++) {
 		  output += '<tr>';
 			for (var j = 0; j < numCells; j++) {
-			  var step = 360 / numColors;
-			  var offset = i*12 + j;
-			  var hue = offset * step;
+			  var step = parseFloat((1 / numColors).toFixed(4));
+			  var offset = parseFloat((i*12.0000 + j).toFixed(4));
+			  var hue = (offset * step).toFixed(4);
 			  var rgb = hsvToRgb(hue,1,1);
 			  var color = rgb.join(',');
 				output += '<td class="sixty-color-grid" style="background:rgb(' + color+ ');">' + i + j + '</td>';
