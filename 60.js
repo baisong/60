@@ -48,7 +48,9 @@ Sixty.items = [
 		for (var i = 0; i < numRows; i++) {
 		  output += '<tr>';
 			for (var j = 0; j < numCells; j++) {
-				output += '<td>' + i + j + '</td>';
+			  var rgb = [i*50,j*4,0];
+			  var color = rgb.join(',');
+				output += '<td class="sixty-color-grid" style="background:rgb(' + color+ ');">' + i + j + '</td>';
 			}
 			output += '</tr>';
 	  }
