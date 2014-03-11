@@ -1,4 +1,4 @@
-var Sixty = Sixty || { 'delay': 1000, 'offset': 0, 'speed': 0 };
+var Sixty = Sixty || { 'delay': 1000, 'offset': 0, 'speed': 3, 'speeds' : [200,300,900,1500,2000,3000]};
 Sixty.items = [
   {},{},{},{},{},{},{},{},{},{},{},{},
   {},{},{},{},{},{},{},{},{},{},{},{},
@@ -8,6 +8,7 @@ Sixty.items = [
 ];
 
 (function($){
+
   /**
    *
    */
@@ -124,12 +125,7 @@ Sixty.items = [
   }
   
   $(document).ready(function(){
-    
-    // Starts play mode.
-    //$('#jumbotron-btn').removeClass('btn-disabled').addClass('play');
-    //$('.action-name').text('Play');
-    //$('#message-1').html(goSixtyColorGrid());
-    
+    $('.speed .speed-value').text(Sixty.speed);
     // Handles playing.
     $('.action-play').click(function(){
       console.log('Play!');
@@ -141,6 +137,35 @@ Sixty.items = [
       console.log('Stop!');
       clearInterval(Sixty.cycle);
     });
+    
+    $('.action-reset').click(function(){
+      Sixty.offset = 0;
+      console.log('Back to the top!');
+      clearInterval(Sixty.cycle);
+      Sixty.cycle = setInterval(goSixty, Sixty.delay);
+    });
+
+    $('.action-fast').click(function(){
+      console.log('Fast!');
+      if ((Sixty.speed + 1) < Sixty.speeds.length) {
+        Sixty.speed = Sixty.speed + 1;
+        Sixty.delay = Sixty.speeds[Sixty.speed];
+      }
+      $('.speed .speed-value').text(Sixty.speed);
+      clearInterval(Sixty.cycle);
+      Sixty.cycle = setInterval(goSixty, Sixty.delay);
+    });
+    
+    $('.action-slow').click(function(){
+      console.log('Slow!');
+      if ((Sixty.speed > 0) {
+        Sixty.speed = Sixty.speed - 1;
+        Sixty.delay = Sixty.speeds[Sixty.speed];
+      }
+      $('.speed .speed-value').text(Sixty.speed);
+      clearInterval(Sixty.cycle);
+      Sixty.cycle = setInterval(goSixty, Sixty.delay);
+    });    
   });	
 })(jQuery);
 
