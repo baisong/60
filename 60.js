@@ -123,9 +123,9 @@ Sixty.items = [
   $(document).ready(function(){
     
     // Starts play mode.
-    $('#jumbotron-btn').removeClass('btn-disabled').addClass('play');
-    $('.action-name').text('Play');
-    $('#message-1').html(goSixtyColorGrid());
+    //$('#jumbotron-btn').removeClass('btn-disabled').addClass('play');
+    //$('.action-name').text('Play');
+    //$('#message-1').html(goSixtyColorGrid());
     
     // Handles playing.
     $('.action-play').click(function(){
