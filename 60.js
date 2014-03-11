@@ -158,14 +158,14 @@ Sixty.items = [
     
     $('.action-slow').click(function(){
       console.log('Slow!');
-      if ((Sixty.speed > 0) {
+      if (Sixty.speed > 0) {
         Sixty.speed = Sixty.speed - 1;
         Sixty.delay = Sixty.speeds[Sixty.speed];
       }
       $('.speed .speed-value').text(Sixty.speed);
       clearInterval(Sixty.cycle);
       Sixty.cycle = setInterval(goSixty, Sixty.delay);
-    });    
+    });
   });	
 })(jQuery);
 
