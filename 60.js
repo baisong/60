@@ -40,6 +40,26 @@ Sixty.items = [
   /**
    *
    */
+  function goSixtyColorGrid() {
+		var numColors = 60;
+		var numRows = 1;
+		var numCells = Math.floor(numColors / numRows);
+		var output = '<table>';
+		for (var i = 0; i < numRows; i++) {
+		  output += '<tr>';
+			for (var j = 0; j < numCells; j++) {
+				output += '<td>' + i + j + '</td>';
+			}
+			output += '</tr>';
+	  }
+		output += '</table>';
+		
+		return output;
+  }
+  
+  /**
+   *
+   */
   function goSixty() {
     console.log('go!');
     var offset = Sixty.offset;
@@ -55,7 +75,7 @@ Sixty.items = [
     // Starts play mode.
     $('#jumbotron-btn').removeClass('btn-disabled').addClass('play');
     $('.action-name').text('Play');
-    $('#message-1').html('<table><tr><td>Test</td><td>123</td></tr></table>');
+    $('#message-1').html(goSixtyColorGrid());
     // Handles playing.
     $('.action-play').click(function(){
       console.log('Play!');
