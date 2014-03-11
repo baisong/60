@@ -45,6 +45,8 @@ Sixty.items = [
 	  var hue = offset * step;
 	  var rgb = hsvToRgb(hue,1,1);
 	  var color = 'rgb(' + rgb.join(',') + ')';
+	  
+	  return color;
   }
   
   /**
