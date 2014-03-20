@@ -1,4 +1,4 @@
-var Sixty = Sixty || { 'delay': 1000, 'offset': 0, 'speed': 3, 'speeds' : [3000,2000,1500,900,300,200]};
+var Sixty = Sixty || { 'delay': 1000, 'offset': 0, 'speed': 2, 'speeds' : [3000,2000,1500,900,300,200]};
 Sixty.items = [
   {},{},{},{},{},{},{},{},{},{},{},{},
   {},{},{},{},{},{},{},{},{},{},{},{},
@@ -147,23 +147,25 @@ Sixty.items = [
 
     $('.action-fast').click(function(){
       console.log('Fast!');
+      clearInterval(Sixty.cycle);
       if ((Sixty.speed + 1) < Sixty.speeds.length) {
         Sixty.speed = Sixty.speed + 1;
         Sixty.delay = Sixty.speeds[Sixty.speed];
       }
       $('.speed .speed-value').text(Sixty.speed);
-      clearInterval(Sixty.cycle);
+      
       Sixty.cycle = setInterval(goSixty, Sixty.delay);
     });
     
     $('.action-slow').click(function(){
       console.log('Slow!');
+      clearInterval(Sixty.cycle);
       if (Sixty.speed > 0) {
         Sixty.speed = Sixty.speed - 1;
         Sixty.delay = Sixty.speeds[Sixty.speed];
       }
       $('.speed .speed-value').text(Sixty.speed);
-      clearInterval(Sixty.cycle);
+      
       Sixty.cycle = setInterval(goSixty, Sixty.delay);
     });
   });	
