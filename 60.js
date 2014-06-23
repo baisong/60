@@ -9,6 +9,75 @@ Sixty.items = [
 
 (function($){
 
+
+  /**
+   * 
+   */
+  function getCountry(offset) {
+    var countries = [
+    'China',
+    'India',
+    'United States',
+    'Indonesia',
+    'Brazil',
+    'Pakistan',
+    'Nigeria',
+    'Bangladesh',
+    'Russia',
+    'Japan',
+    'Mexico',
+    'Philippines',
+    'Vietnam',
+    'Ethiopia',
+    'Egypt',
+    'Germany',
+    'Iran',
+    'Turkey',
+    'Democratic Republic of the Congo',
+    'Thailand',
+    'France',
+    'United Kingdom',
+    'Italy',
+    'Burma',
+    'South Africa',
+    'South Korea',
+    'Colombia',
+    'Spain',
+    'Ukraine',
+    'Tanzania',
+    'Kenya',
+    'Argentina',
+    'Algeria',
+    'Poland',
+    'Sudan',
+    'Uganda',
+    'Canada',
+    'Iraq',
+    'Morocco',
+    'Peru',
+    'Uzbekistan',
+    'Saudi Arabia',
+    'Malaysia',
+    'Venezuela',
+    'Nepal',
+    'Afghanistan',
+    'Yemen',
+    'North Korea',
+    'Ghana',
+    'Mozambique',
+    'Taiwan',
+    'Australia',
+    'Ivory Coast',
+    'Syria',
+    'Madagascar',
+    'Angola',
+    'Cameroon',
+    'Sri Lanka',
+    'Romania',
+    'Burkina Faso'
+    ];
+    return countries[offset];
+  }
   /**
    *
    */
@@ -119,6 +188,7 @@ Sixty.items = [
     $('#character').text(getCharacter(offset));
     $('#syllable').text(getSyllable(offset));
     $('#decimal').text(offset);
+    $('#country').text(getCountry(offset));
     var color = getColor(offset);
     $('.jumbotron').css('background-color', color);
     Sixty.offset = (Sixty.offset + 1) % Sixty.items.length;
