@@ -72,11 +72,23 @@ var date = today.getDate();
     var months = ["January", "February", "March", 
 "April", "May", "June", "July", "August", "September", 
 "October", "November", "December"];
-    things.push(weekdays[weekday] + ", " + months[month] + " " + date + nth(date) + ", " + year);
+    things.push(weekdays[weekday] + "<br/>" + months[month] + " " + date + nth(date) + ", " + year);
     // TODO Season diagram
     // Short weekdate notation
     // Long weekdate notation
     // Char
+    var sixtyEpoch = new Date("December 27, 2014 00:00:00");
+    var sixtyWeekday = parseInt(today - sixtyEpoch)/(1000*60*60*24)) % 60;
+    function getCharacter(offset) {
+    var characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWX';
+    character = '-';
+    if (offset < characters.length) {
+      character = characters[offset];
+    }
+    
+    return character;
+  }
+    things.push(getCharacter(sixtyWeekday));
     // Char + Syllable
     // Syllable + decimal notation + chinese full number name
     // Syllable + binary notation + hex notation
