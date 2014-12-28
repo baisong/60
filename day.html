@@ -86,9 +86,21 @@
                 // Long weekdate notation
                 // Char
                 var sixtyEpoch = new Date("December 27, 2014 00:00:00");
+                function sixtyWeekday(date) {
+                    return Math.floor(parseInt(today - sixtyEpoch) / (1000 * 60 * 60 * 24)) % 60;
+                }
+                // test -- should be 1
+                var today = new Date('December 28, 2015 00:00:00');
+                console.log(today);
+                console.log(sixtyWeekday(today));
+                // test -- should be 0
+                var today = new Date('February 25, 2015 00:00:00');
+                console.log(today);
+                console.log(sixtyWeekday(today));
                 // test -- should be 59
                 var today = new Date('April 25, 2015 00:00:00');
-                var sixtyWeekday = Math.floor(parseInt(today - sixtyEpoch) / (1000 * 60 * 60 * 24)) % 60;
+                console.log(today);
+                console.log(sixtyWeekday(today));
 
                 function getCharacter(offset) {
                     var characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWX';
