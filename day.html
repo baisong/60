@@ -205,12 +205,14 @@
 	        var d = Math.pow(16, i);
 	        if (offset >= d) {
 	        	var times = Math.floor(d/offset);
+	        	console.log('times: ' + times);
 	        	var multiple = (times * d);
+	        	console.log('mult: ' + multiple)
 	            offset = offset - multiple;
 	            ret = ret + digits[times];
 	        }
 	        else {
-	            ret = ret + '0';
+	            ret = ret + digits[offset];
 	        }
 	    }
 	    
