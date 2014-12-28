@@ -30,6 +30,18 @@ $(document).ready(function(){
  var getThings = function() {
     var things = [];
     // Weekday diagram
+    var today = new Date();
+    var weekday = (today.getDay() + 6) % 7;
+    var html = '<table class="week"><tr>';
+    for (var i = 0; i < 7; i++) {
+     if (i == weekday) {
+      html += '<td class="active"></td>';
+     }
+     html += '<td></td>';
+    }
+    html += '</td></tr></table>'
+    things.push(html);
+    
     // Day of the week
     // DOW + Date
     // TODO Season diagram
@@ -41,17 +53,7 @@ $(document).ready(function(){
     // Syllable + binary notation + hex notation
     // Nth largest country?
     // {country}
-    var today = new Date();
-    var weekday = (d.getDay() + 6) % 7;
-    var html = '<table class="week"><tr>';
-    for (var i = 0; i < 7; i++) {
-     if (i == weekday) {
-      html += '<td class="active"></td>';
-     }
-     html += '<td></td>';
-    }
-    html += '</td></tr></table>'
-    things.push(html);
+    
     return things;
    }
  $("#message").html("ready");
