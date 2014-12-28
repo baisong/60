@@ -275,9 +275,13 @@
                 // ... + hex
                 things.push(getSyllable(sixtyWeekday) + "<br/>" + getBinary(sixtyWeekday) + "<br/>" + getHex(sixtyWeekday));
                 // Nth largest country?
-                things.push(sixtyWeekday + nth(sixtyWeekday) + " largest country?");
+                var ord = '';
+                if (sixtyWeekday > 0) {
+                	ord = (sixtyWeekday + 1) + nth(sixtyWeekday + 1);
+                }
+                things.push(ord + " largest country?");
                 // {country}
-                things.push(sixtyWeekday + nth(sixtyWeekday) + " largest country:<br/>" + getCountry(sixtyWeekday));
+                things.push(ord + " largest country:<br/>" + getCountry(sixtyWeekday));
 
                 return things;
             }
