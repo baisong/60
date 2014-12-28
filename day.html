@@ -1,118 +1,127 @@
 <html>
+
 <head>
-<title>Day</title>
+    <title>Day</title>
 </head>
+
 <body>
-<style>
- body {
-  background-color: #f0f0f0;
- }
- #page {
-  margin: 20px auto;
-  width: 800px;
-  border-radius: 10px;
-  text-align: center;
-  padding: 20px;
-  background-color: white;
-  min-height: 400px;
- }
- #message {
-  font-size: 20px;
-  font-family: Arial, helvetica, sans-serif;
-  margin: 100px auto;
- }
- .week td {
-border: 1px solid black;
-height: 97px;
-}
-.week .active {
- background-color: black;
-}
-.week {
- width: 100%;
-}
-</style>
-<div id="page">
-<div id="message" data-offset="-1"></div>
-</div>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
- var getThings = function() {
-    var things = [];
-    // Weekday diagram
-    var today = new Date();
-    var weekday = (today.getDay() + 6) % 7;
-    var html = '<table class="week"><tr>';
-    for (var i = 0; i < 7; i++) {
-     if (i == weekday) {
-      html += '<td class="active"></td>';
-      continue;
-     }
-     html += '<td></td>';
-    }
-    html += '</td></tr></table>'
-    things.push(html);
-    // Day of the week
-    var weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-    things.push(weekdays[weekday]);
-    // DOW + Date
-    var month = today.getMonth();
-    var year = today.getFullYear();
-    function nth(d) {
-  if(d>3 && d<21) return 'th';
-  switch (d % 10) {
-        case 1:  return "st";
-        case 2:  return "nd";
-        case 3:  return "rd";
-        default: return "th";
-    }
-}
-var date = today.getDate();
-    var months = ["January", "February", "March", 
-"April", "May", "June", "July", "August", "September", 
-"October", "November", "December"];
-    things.push(weekdays[weekday] + "<br/>" + months[month] + " " + date + nth(date) + ", " + year);
-    // TODO Season diagram
-    // Short weekdate notation
-    // Long weekdate notation
-    // Char
-    var sixtyEpoch = new Date("December 27, 2014 00:00:00");
-    var sixtyWeekday = parseInt(today - sixtyEpoch)/(1000*60*60*24) % 60;
-    function getCharacter(offset) {
-    var characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWX';
-    character = '-';
-    if (offset < characters.length) {
-      character = characters[offset];
-    }
-    
-    return character;
-  }
-    things.push(getCharacter(sixtyWeekday));
-    // Char + Syllable
-    // Syllable + decimal notation + chinese full number name
-    // Syllable + binary notation + hex notation
-    // Nth largest country?
-    // {country}
-    
-    return things;
-   }
- $("#message").html("ready");
- $('body').keyup(function(e){
-  if (e.keyCode == 32) {
-   var things = getThings();
-   var $m = $('#message');
-   var offset = parseInt($m.data('offset')) + 1;
-   if ((offset < things.length) && (things[offset].length > 0)) {
-     $m.html(things[offset]);
-     $m.data('offset', offset);
-   }
-   else {
-    $m.text('all set!');
-   }
-  }
- });
-});
-</script>
+    <style>
+        body {
+            background-color: #f0f0f0;
+        }
+        #page {
+            margin: 20px auto;
+            width: 800px;
+            border-radius: 10px;
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            min-height: 400px;
+        }
+        #message {
+            font-size: 20px;
+            font-family: Arial, helvetica, sans-serif;
+            margin: 100px auto;
+        }
+        .week td {
+            border: 1px solid black;
+            height: 97px;
+        }
+        .week .active {
+            background-color: black;
+        }
+        .week {
+            width: 100%;
+        }
+    </style>
+    <div id="page">
+        <div id="message" data-offset="-1"></div>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var getThings = function() {
+                var things = [];
+                // Weekday diagram
+                var today = new Date();
+                var weekday = (today.getDay() + 6) % 7;
+                var html = '<table class="week"><tr>';
+                for (var i = 0; i < 7; i++) {
+                    if (i == weekday) {
+                        html += '<td class="active"></td>';
+                        continue;
+                    }
+                    html += '<td></td>';
+                }
+                html += '</td></tr></table>'
+                things.push(html);
+                // Day of the week
+                var weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+                things.push(weekdays[weekday]);
+                // DOW + Date
+                var month = today.getMonth();
+                var year = today.getFullYear();
+
+                function nth(d) {
+                    if (d > 3 && d < 21) return 'th';
+                    switch (d % 10) {
+                        case 1:
+                            return "st";
+                        case 2:
+                            return "nd";
+                        case 3:
+                            return "rd";
+                        default:
+                            return "th";
+                    }
+                }
+                var date = today.getDate();
+                var months = ["January", "February", "March",
+                    "April", "May", "June", "July", "August", "September",
+                    "October", "November", "December"
+                ];
+                things.push(weekdays[weekday] + "<br/>" + months[month] + " " + date + nth(date) + ", " + year);
+                // TODO Season diagram
+                // Short weekdate notation
+                // Long weekdate notation
+                // Char
+                var sixtyEpoch = new Date("December 27, 2014 00:00:00");
+                var sixtyWeekday = Math.floor(parseInt(today - sixtyEpoch) / (1000 * 60 * 60 * 24)) % 60;
+
+                function getCharacter(offset) {
+                    var characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWX';
+                    character = '-';
+                    if (offset < characters.length) {
+                        character = characters[offset];
+                    }
+
+                    return character;
+                }
+                things.push(getCharacter(sixtyWeekday));
+                // Char + Syllable
+                // Syllable + decimal notation + chinese full number name
+                // Syllable + binary notation + hex notation
+                // Nth largest country?
+                // {country}
+
+                return things;
+            }
+            $("#message").html("ready");
+            $('body').keyup(function(e) {
+                if (e.keyCode == 32) {
+                    var things = getThings();
+                    var $m = $('#message');
+                    var offset = parseInt($m.data('offset')) + 1;
+                    if ((offset < things.length) && (things[offset].length > 0)) {
+                        $m.html(things[offset]);
+                        $m.data('offset', offset);
+                    } else {
+                        $m.text('all set!');
+                    }
+                }
+            });
+        });
+    </script>
 </body>
+
 </html>
