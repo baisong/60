@@ -275,9 +275,9 @@
                 // ... + hex
                 things.push(getSyllable(sixtyWeekday) + "<br/>" + getBinary(sixtyWeekday) + "<br/>" + getHex(sixtyWeekday));
                 // Nth largest country?
-                things.push(offset + nth(sixtyWeekday) + " largest country?");
+                things.push(sixtyWeekday + nth(sixtyWeekday) + " largest country?");
                 // {country}
-                things.push(offset + nth(sixtyWeekday) + " largest country:<br/>" + getCountry(sixtyWeekday));
+                things.push(sixtyWeekday + nth(sixtyWeekday) + " largest country:<br/>" + getCountry(sixtyWeekday));
 
                 return things;
             }
