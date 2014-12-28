@@ -53,9 +53,26 @@ $(document).ready(function(){
     }
     html += '</td></tr></table>'
     things.push(html);
-    
     // Day of the week
+    var weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+    things.push(weekdays[weekday]);
     // DOW + Date
+    var month = today.getMonth();
+    var year = today.getFullYear();
+    function nth(d) {
+  if(d>3 && d<21) return 'th'; // thanks kennebec
+  switch (d % 10) {
+        case 1:  return "st";
+        case 2:  return "nd";
+        case 3:  return "rd";
+        default: return "th";
+    }
+}
+var date = today.getDate();
+    var months = ["January", "February", "March", 
+"April", "May", "June", "July", "August", "September", 
+"October", "November", "December"];
+    things.push(weekdays[weekday] + ", " + months[month] + " " + date + nth(date) + ", " + year);
     // TODO Season diagram
     // Short weekdate notation
     // Long weekdate notation
