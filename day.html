@@ -36,7 +36,7 @@ $(document).ready(function(){
    var things = getThings();
    var $m = $('#message');
    var offset = $m.data('offset');
-   if (things[offset + 1].length) {
+   if ((offset < things.length) && (things[offset + 1].length > 0)) {
      $m.text(things[offset + 1]);
      $m.data('offset', offset + 1);
    }
