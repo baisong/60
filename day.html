@@ -198,9 +198,26 @@
 	    return ret;
 	}
 	
-	function getHex(o) {
-		return '(hex)'
-	}
+	function getHex(offset) {
+            var ret = '';
+            var digits = ['0', '1', '2', '3','4','5','6','7','8','9','A','B','C','D','E','F'];
+	    for (var i = 1; i > -1; i--) {
+	        var d = Math.pow(16, i);
+	        if (offset >= d) {
+	        	var times = Math.floor(d/offset);
+	        	var multiple = (times * d);
+	            offset = offset - multiple;
+	            ret = ret + digits[times];
+	        }
+	        else {
+	            ret = ret + '0';
+	        }
+	    }
+	    
+	    return ret;
+	    }
+	
+	
             var getThings = function() {
                 var things = [];
                 // Weekday diagram
@@ -269,11 +286,11 @@
                 things.push(getCharacter(sixtyWeekday) + "<br/>" + getSyllable(sixtyWeekday))
                 // Syllable + decimal notation + ...
                 // @TODO chinese full number name
-                things.push(getSyllable(sixtyWeekday) + "<br/>" + sixtyWeekday);
+                things.push(getCharacter(sixtyWeekday) + "<br/>" + getSyllable(sixtyWeekday) + "<br/>" + sixtyWeekday);
                 // Syllable + binary notation + hex notation
-                things.push(getSyllable(sixtyWeekday) + "<br/>" + getBinary(sixtyWeekday));
+                things.push(getCharacter(sixtyWeekday) + "<br/>" + getSyllable(sixtyWeekday) + "<br/>" + getBinary(sixtyWeekday));
                 // ... + hex
-                things.push(getSyllable(sixtyWeekday) + "<br/>" + getBinary(sixtyWeekday) + "<br/>" + getHex(sixtyWeekday));
+                things.push(getCharacter(sixtyWeekday) + "<br/>" + getSyllable(sixtyWeekday) + "<br/>" + getBinary(sixtyWeekday) + "<br/>" + getHex(sixtyWeekday));
                 // Nth largest country?
                 var ord = '';
                 if (sixtyWeekday > 0) {
