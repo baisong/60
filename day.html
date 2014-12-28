@@ -86,6 +86,8 @@
                 // Long weekdate notation
                 // Char
                 var sixtyEpoch = new Date("December 27, 2014 00:00:00");
+                // test -- should be 59
+                var today = new Date('April 25, 2015 00:00:00');
                 var sixtyWeekday = Math.floor(parseInt(today - sixtyEpoch) / (1000 * 60 * 60 * 24)) % 60;
 
                 function getCharacter(offset) {
