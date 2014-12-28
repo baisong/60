@@ -40,6 +40,161 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script>
         $(document).ready(function() {
+            function getCountry(offset) {
+    var countries = [
+    'China',
+    'India',
+    'United States',
+    'Indonesia',
+    'Brazil',
+    'Pakistan',
+    'Nigeria',
+    'Bangladesh',
+    'Russia',
+    'Japan',
+    'Mexico',
+    'Philippines',
+    'Vietnam',
+    'Ethiopia',
+    'Egypt',
+    'Germany',
+    'Iran',
+    'Turkey',
+    'Democratic Republic of the Congo',
+    'Thailand',
+    'France',
+    'United Kingdom',
+    'Italy',
+    'Burma',
+    'South Africa',
+    'South Korea',
+    'Colombia',
+    'Spain',
+    'Ukraine',
+    'Tanzania',
+    'Kenya',
+    'Argentina',
+    'Algeria',
+    'Poland',
+    'Sudan',
+    'Uganda',
+    'Canada',
+    'Iraq',
+    'Morocco',
+    'Peru',
+    'Uzbekistan',
+    'Saudi Arabia',
+    'Malaysia',
+    'Venezuela',
+    'Nepal',
+    'Afghanistan',
+    'Yemen',
+    'North Korea',
+    'Ghana',
+    'Mozambique',
+    'Taiwan',
+    'Australia',
+    'Ivory Coast',
+    'Syria',
+    'Madagascar',
+    'Angola',
+    'Cameroon',
+    'Sri Lanka',
+    'Romania',
+    'Burkina Faso'
+    ];
+    return countries[offset];
+  }
+  /**
+   *
+   */
+  function getCharacter(offset) {
+    var characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWX';
+    character = '-';
+    if (offset < characters.length) {
+      character = characters[offset];
+    }
+    
+    return character;
+  }
+  
+  /**
+   *
+   */
+  function getSyllable(offset) {
+    syllable = 'CVN?';
+    c = 'pmtlk';
+    v = ['y','e','i','a','u','o','yn','on','un','an','in','en'];
+    cOffset = Math.floor(offset / 12);
+    vOffset = offset % 12;
+    if (cOffset < c.length && vOffset < v.length) {
+      syllable = c[cOffset] + v[vOffset];
+    }
+    
+    return syllable;
+  }
+  
+  /**
+   *
+   */
+  function getColor(offset) {
+		var step = 1.0000 / 60;
+	  var hue = offset * step;
+	  var rgb = hsvToRgb(hue,1,1);
+	  var color = 'rgb(' + rgb.join(',') + ')';
+	  
+	  return color;
+  }
+  
+  /**
+	 * Converts an HSV color value to RGB. Conversion formula
+	 * adapted from http://en.wikipedia.org/wiki/HSV_color_space.
+	 * Assumes h, s, and v are contained in the set [0, 1] and
+	 * returns r, g, and b in the set [0, 255].
+	 *
+	 * @param   Number  h       The hue
+	 * @param   Number  s       The saturation
+	 * @param   Number  v       The value
+	 * @return  Array           The RGB representation
+	 *
+	 * @see https://gist.github.com/mjijackson/5311256
+	 */
+	function hsvToRgb(h, s, v) {
+		var r, g, b;
+	 
+		var i = Math.floor(h * 6);
+		var f = h * 6 - i;
+		var p = v * (1 - s);
+		var q = v * (1 - f * s);
+		var t = v * (1 - (1 - f) * s);
+	 
+		switch (i % 6) {
+		  case 0: r = v, g = t, b = p; break;
+		  case 1: r = q, g = v, b = p; break;
+		  case 2: r = p, g = v, b = t; break;
+		  case 3: r = p, g = q, b = v; break;
+		  case 4: r = t, g = p, b = v; break;
+		  case 5: r = v, g = p, b = q; break;
+		}
+	 
+		return [ Math.round(r * 255), Math.round(g * 255), Math.round(b * 255) ];
+	}
+	function getBinary(offset) {
+	    var ret = '';
+	    for (var i = 7; i > -1; i--) {
+	        var d = Math.pow(2, i);
+	        if (offset >= d) {
+	            offset = offset - d;
+	            ret = ret + '1';
+	        }
+	        else {
+	            ret = ret + '0';
+	        }
+	        if (i == 3) {
+	            ret = ret + ' ';
+	        }
+	    }
+	}
             var getThings = function() {
                 var things = [];
                 // Weekday diagram
@@ -86,10 +241,11 @@
                 // Long weekdate notation
                 // Char
                 var sixtyEpoch = new Date("December 27, 2014 00:00:00");
-                function sixtyWeekday(date) {
+                function getSixtyWeekday(date) {
                     return Math.floor(parseInt(today.getTime() - sixtyEpoch.getTime()) / (1000* 60 * 60 * 24)) % 60;
                 }
-                // test -- should be 1
+                var sixtyWeekday = getSixtyWeekday(date);
+                /* test -- should be 1
                 var today = new Date('December 28, 2014 00:00:00');
                 console.log(today);
                 console.log(sixtyWeekday(today));
@@ -100,23 +256,22 @@
                 // test -- should be 59
                 var today = new Date('April 25, 2015 00:00:00');
                 console.log(today);
-                console.log(sixtyWeekday(today));
+                console.log(sixtyWeekday(today)); */
 
-                function getCharacter(offset) {
-                    var characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWX';
-                    character = '-';
-                    if (offset < characters.length) {
-                        character = characters[offset];
-                    }
-
-                    return character;
-                }
                 things.push(getCharacter(sixtyWeekday));
                 // Char + Syllable
-                // Syllable + decimal notation + chinese full number name
+                things.push(getCharacter(sixtyWeekday) + "<br/>" + getSyllable(offset))
+                // Syllable + decimal notation + ...
+                // @TODO chinese full number name
+                things.push(getSyllable(offset) + "<br/>" + offset);
                 // Syllable + binary notation + hex notation
+                things.push(getSyllable(offset) + "<br/>" + getBinary(offset));
+                // ... + hex
+                things.push(getSyllable(offset) + "<br/>" + getBinary(offset) + "<br/>" + getHex(offset));
                 // Nth largest country?
+                things.push(offset + nth(offset) + " largest country?");
                 // {country}
+                things.push(offset + nth(offset) + " largest country:<br/>" + getCountry(offset));
 
                 return things;
             }
