@@ -28,7 +28,31 @@
 <script>
 $(document).ready(function(){
  var getThings = function() {
-    return ['a', 'b', 'c'];
+    var things = [];
+    // Weekday diagram
+    // Day of the week
+    // DOW + Date
+    // TODO Season diagram
+    // Short weekdate notation
+    // Long weekdate notation
+    // Char
+    // Char + Syllable
+    // Syllable + decimal notation + chinese full number name
+    // Syllable + binary notation + hex notation
+    // Nth largest country?
+    // {country}
+    var today = new Date();
+    var weekday = (d.getDay() + 6) % 7;
+    var html = '<table class="week"><tr>';
+    for (var i = 0; i < 7; i++) {
+     if (i == weekday) {
+      html += '<td class="active"></td>';
+     }
+     html += '<td></td>';
+    }
+    html += '</td></tr></table>'
+    things.push(html);
+    return things;
    }
  $("#message").html("ready");
  $('body').keyup(function(e){
@@ -37,7 +61,7 @@ $(document).ready(function(){
    var $m = $('#message');
    var offset = parseInt($m.data('offset')) + 1;
    if ((offset < things.length) && (things[offset].length > 0)) {
-     $m.text(things[offset]);
+     $m.html(things[offset]);
      $m.data('offset', offset);
    }
    else {
