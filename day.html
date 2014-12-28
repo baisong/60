@@ -301,6 +301,7 @@
                 things.push(ord + " largest country?");
                 // {country}
                 things.push(ord + " largest country:<br/>" + getCountry(sixtyWeekday));
+                $('#message').data('country', getCountry(sixtyWeekday));
 
                 return things;
             }
@@ -314,6 +315,9 @@
                         $m.html(things[offset]);
                         $m.data('offset', offset);
                     } else {
+                    	var c = $m.data('country');
+                    	var url = 'https://www.google.com/webhp#q=' + c + '&hl=en&gl=us&qscrl=1&tbm=nws&tbs=qdr:d';
+                        window.location.replace(url);
                         $m.text('all set!');
                     }
                 }
