@@ -35,10 +35,10 @@ $(document).ready(function(){
   if (e.keyCode == 32) {
    var things = getThings();
    var $m = $('#message');
-   var offset = $m.data('offset');
-   if ((offset < things.length) && (things[offset + 1].length > 0)) {
-     $m.text(things[offset + 1]);
-     $m.data('offset', offset + 1);
+   var offset = parseInt($m.data('offset')) + 1;
+   if ((offset < things.length) && (things[offset].length > 0)) {
+     $m.text(things[offset]);
+     $m.data('offset', offset);
    }
    else {
     $m.text('all set!');
