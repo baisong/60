@@ -218,7 +218,7 @@
                 things.push(html);
                 // Day of the week
                 var weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-                things.push(weekdays[weekday]);
+                things.push(html + '<br/>' + weekdays[weekday]);
                 // DOW + Date
                 var month = today.getMonth();
                 var year = today.getFullYear();
@@ -241,7 +241,7 @@
                     "April", "May", "June", "July", "August", "September",
                     "October", "November", "December"
                 ];
-                things.push(weekdays[weekday] + "<br/>" + months[month] + " " + date + nth(date) + ", " + year);
+                things.push(html + '<br/>' + weekdays[weekday] + "<br/>" + months[month] + " " + date + nth(date) + ", " + year);
                 // TODO Season diagram
                 // Short weekdate notation
                 // Long weekdate notation
