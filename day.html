@@ -204,7 +204,7 @@
 	    for (var i = 1; i > -1; i--) {
 	        var d = Math.pow(16, i);
 	        if (offset >= d) {
-	        	var times = Math.floor(d/offset);
+	        	var times = Math.floor(offset/d);
 	        	console.log('times: ' + times);
 	        	var multiple = (times * d);
 	        	console.log('mult: ' + multiple)
@@ -212,7 +212,7 @@
 	            ret = ret + digits[times];
 	        }
 	        else {
-	            ret = ret + digits[offset];
+	            ret = ret + '0';
 	        }
 	    }
 	    
