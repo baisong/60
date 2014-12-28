@@ -260,18 +260,18 @@
 
                 things.push(getCharacter(sixtyWeekday));
                 // Char + Syllable
-                things.push(getCharacter(sixtyWeekday) + "<br/>" + getSyllable(offset))
+                things.push(getCharacter(sixtyWeekday) + "<br/>" + getSyllable(sixtyWeekday))
                 // Syllable + decimal notation + ...
                 // @TODO chinese full number name
-                things.push(getSyllable(offset) + "<br/>" + offset);
+                things.push(getSyllable(sixtyWeekday) + "<br/>" + sixtyWeekday);
                 // Syllable + binary notation + hex notation
-                things.push(getSyllable(offset) + "<br/>" + getBinary(offset));
+                things.push(getSyllable(sixtyWeekday) + "<br/>" + getBinary(sixtyWeekday));
                 // ... + hex
-                things.push(getSyllable(offset) + "<br/>" + getBinary(offset) + "<br/>" + getHex(offset));
+                things.push(getSyllable(sixtyWeekday) + "<br/>" + getBinary(sixtyWeekday) + "<br/>" + getHex(sixtyWeekday));
                 // Nth largest country?
-                things.push(offset + nth(offset) + " largest country?");
+                things.push(offset + nth(sixtyWeekday) + " largest country?");
                 // {country}
-                things.push(offset + nth(offset) + " largest country:<br/>" + getCountry(offset));
+                things.push(offset + nth(sixtyWeekday) + " largest country:<br/>" + getCountry(sixtyWeekday));
 
                 return things;
             }
