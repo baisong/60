@@ -235,7 +235,7 @@
                 var html = '<table class="week"><tr>';
                 for (var h = 0; h < weeks_in_month; h++) {
                 for (var i = 0; i < 7; i++) {
-                    if (i == weekday && h == weeknum) {
+                    if (i == weekday && ((h + 1) == weeknum)) {
                         html += '<td class="day active"></td>';
                         continue;
                     }
