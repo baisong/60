@@ -225,14 +225,22 @@
                 var things = [];
                 // Weekday diagram
                 var today = new Date();
+                var s454 = today.toSymmetry454();
+                var yearnum = s454[0];
+                var monthnum = s454[1]
+                var weeks_in_month = ((s454 % 3) == 2) ? 5 : 4;
+                var weeknum = s454[2];
+                var daynum = s454[3];
                 var weekday = (today.getDay() + 6) % 7;
                 var html = '<table class="week"><tr>';
+                for (var h = 0; h < weeks_in_month; h++) {
                 for (var i = 0; i < 7; i++) {
-                    if (i == weekday) {
-                        html += '<td class="active"></td>';
+                    if (i == weekday && h == weeknum) {
+                        html += '<td class="day active"></td>';
                         continue;
                     }
-                    html += '<td></td>';
+                    html += '<td class="day"></td>';
+                }
                 }
                 html += '</td></tr></table>'
                 things.push(html);
