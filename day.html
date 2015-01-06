@@ -38,6 +38,7 @@
         <div id="message" data-offset="-1"></div>
     </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="//baisong.github.io/s454.js/js/symmetry454.js"></script>
     <script>
         $(document).ready(function() {
             function getCountry(offset) {
@@ -238,6 +239,7 @@
                 // Day of the week
                 var weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
                 things.push(html + '<br/>' + weekdays[weekday]);
+                things.push(html + '<br/>' + weekdays[weekday] + "<br/>" + today.toSymmetry454String());
                 // DOW + Date
                 var month = today.getMonth();
                 var year = today.getFullYear();
