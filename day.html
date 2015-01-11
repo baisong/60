@@ -237,9 +237,10 @@
                 for (var i = 0; i < 7; i++) {
                     if (i == weekday && ((h + 1) == weeknum)) {
                         html += '<td class="day active"></td>';
-                        continue;
                     }
-                    html += '<td class="day"></td>';
+                    else {
+                        html += '<td class="day"></td>';
+                    }
                     if (i == 6) {
                     	html += '</tr><tr>'
                     }
