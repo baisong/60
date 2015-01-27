@@ -130,6 +130,6 @@ $(document).ready(function() {
     
     $("#message").html("ready");
     $('body').keyup(proceed);
-    $('body').on('tap', proceed2) {
+    $('body').on('tap', proceed2);
     }
 });
