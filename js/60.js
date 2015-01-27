@@ -159,18 +159,18 @@ Sixty.country = function() {
 }
 Sixty.chord = function() {
     return [
-        'C', 'Am', 'Fm6', 'G7', Cmaj7 ',
-        'F', 'Dm', 'Bbm6', 'C7', Fmaj7 ',
-        'Bb', 'Gm', 'Ebm6', 'F7', Bbmaj7 ',
-        'Eb', 'Cm', 'Abm6', 'Bb7', Ebmaj7 ',
-        'Ab', 'Fm', 'Dbm6', 'Eb7', Abmaj7 ',
-        'Db', 'Bbm', 'Gbm6', 'Ab7', Dbmaj7 ',
-        'F#', 'D#m', 'Bm6', 'C#7', F# maj7 ',
-        'B', 'G#m', 'Em6', 'F#7', Bmaj7 ',
-        'E', 'C#m', 'Am6', 'B7', Emaj7 ',
-        'A', 'F#m', 'Dm6', 'E7', Amaj7 ',
-        'D', 'Bm', 'Gm6', 'A7', Dmaj7 ',
-        'G', 'Em', 'Cm6', 'D7', Gmaj7 ',
+        'C', 'Am', 'Fm6', 'G7', 'Cmaj7',
+        'F', 'Dm', 'Bbm6', 'C7', 'Fmaj7',
+        'Bb', 'Gm', 'Ebm6', 'F7', 'Bbmaj7',
+        'Eb', 'Cm', 'Abm6', 'Bb7', 'Ebmaj7',
+        'Ab', 'Fm', 'Dbm6', 'Eb7', 'Abmaj7',
+        'Db', 'Bbm', 'Gbm6', 'Ab7', 'Dbmaj7',
+        'F#', 'D#m', 'Bm6', 'C#7', 'F#maj7',
+        'B', 'G#m', 'Em6', 'F#7', 'Bmaj7',
+        'E', 'C#m', 'Am6', 'B7', 'Emaj7',
+        'A', 'F#m', 'Dm6', 'E7', 'Amaj7',
+        'D', 'Bm', 'Gm6', 'A7', 'Dmaj7',
+        'G', 'Em', 'Cm6', 'D7', 'Gmaj7',
     ];
 }
 Sixty.name = function() {
