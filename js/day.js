@@ -82,7 +82,7 @@ $(document).ready(function() {
         // @TODO chinese full number name
         rows += "<br/>" + sixtyWeekday;
         things.push(rows);
-        rows += Sixty.get(sixtyWeekday, 'binary');
+        rows += "<br/>" + Sixty.get(sixtyWeekday, 'binary');
         things.push(rows);
         rows += "<br/>" + Sixty.get(sixtyWeekday, 'hex');
         things.push(rows);
