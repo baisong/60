@@ -92,7 +92,7 @@ $(document).ready(function() {
         }
         things.push(ord + " largest country?");
         var country = Sixty.get(sixtyWeekday, 'country');
-        things.push(ord + " largest country:<br/>" + country;
+        things.push(ord + " largest country:<br/>" + country);
         $('#message').data('country', country);
 
         return things;
