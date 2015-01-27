@@ -46,7 +46,7 @@ Sixty._hex = function(offset) {
     return ret;
 }
 Sixty.hex = function() {
-    return Sixty._map(Sixty._hex());
+    return Sixty._map(Sixty._hex);
 }
 Sixty.decimal = function() {
     return Sixty._sixty();
@@ -69,7 +69,7 @@ Sixty._binary = function(offset) {
     return ret;
 }
 Sixty.binary = function() {
-    return Sixty._map(Sixty._binary());
+    return Sixty._map(Sixty._binary);
 }
 Sixty._syllable = function(offset) {
     syllable = 'CVN?';
@@ -84,7 +84,7 @@ Sixty._syllable = function(offset) {
     return syllable;
 }
 Sixty.syllable = function() {
-    return Sixty._map(Sixty._syllable());
+    return Sixty._map(Sixty._syllable);
 }
 Sixty._hue = function(offset) {
     var step = 1.0000 / 60;
@@ -95,7 +95,7 @@ Sixty._hue = function(offset) {
     return color;
 }
 Sixty.hue = function() {
-    return Sixty._map(Sixty._hue());
+    return Sixty._map(Sixty._hue);
 }
 Sixty.country = function() {
     return [
