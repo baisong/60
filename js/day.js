@@ -75,9 +75,9 @@ $(document).ready(function() {
         console.log(today);
         console.log(sixtyWeekday(today)); */
 
-        var rows = Sixty._get(sixtyWeekday)
+        var rows = Sixty.get(sixtyWeekday)
         things.push(rows);
-        rows += "<br/>" + Sixty._get(sixtyWeekday, 'syllable');
+        rows += "<br/>" + Sixty.get(sixtyWeekday, 'syllable');
         things.push(rows);
         // @TODO chinese full number name
         rows += "<br/>" + sixtyWeekday;
