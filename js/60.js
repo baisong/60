@@ -11,10 +11,14 @@ Sixty._sixty = function() {
     }
     return result;
 }
+Sixty._each = function(array, action) {
+  for (var i = 0; i < array.length; i++)
+    action(array[i]);
+}
 Sixty._map = function(func) {
     var xs = Sixty._sixty();
     var result = [];
-    forEach(array, function(element) {
+    Sixty._each(array, function(element) {
         result.push(func(element));
     });
     return result;
