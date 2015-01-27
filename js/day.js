@@ -112,7 +112,7 @@ $(document).ready(function() {
                 $m.text('all set!');
             }
         }
-    }
+    };
     var proceed2 = function() {
        var things = getThings();
             var $m = $('#message');
@@ -126,7 +126,7 @@ $(document).ready(function() {
                 window.location.replace(url);
                 $m.text('all set!');
             }
-    }
+    };
     
     $("#message").html("ready");
     $('body').keyup(proceed);
