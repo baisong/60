@@ -1,7 +1,6 @@
 var Sixty = Sixty || {};
-Sixty._def = function(param,
-    default) {
-    return (typeof param !== 'undefined') ? param : default;
+Sixty._def = function(param, default_value) {
+    return (typeof param !== 'undefined') ? param : default_value;
 }
 Sixty._sixty = function() {
     var i = 0;
