@@ -18,7 +18,7 @@ Sixty._each = function(array, action) {
 Sixty._map = function(func) {
     var xs = Sixty._sixty();
     var result = [];
-    Sixty._each(array, function(element) {
+    Sixty._each(xs, function(element) {
         result.push(func(element));
     });
     return result;
