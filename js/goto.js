@@ -28,7 +28,7 @@ $(document).ready(function() {
     if (urls.hasOwnProperty(type)) {
       return urls[type];
     }
-    return false;
+    return 'http://baisong.github.io/bigtext?title=[thing]&subtitle=(' + type + ')';
   }
   
   var o = getParameterByName('o');
