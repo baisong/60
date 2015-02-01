@@ -33,7 +33,7 @@ $(document).ready(function() {
   
   var o = getParameterByName('o');
   var type = getParameterByName('t');
-  var url = getParameterByUrl('u');
+  var url = getParameterByName('u');
   if (o.length && type.length) {
     if (!url.length) {
       url = getUrlFromType(type);
