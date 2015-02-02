@@ -8,15 +8,11 @@ $(document).ready(function() {
   }
   
   function insertThingIntoUrl(thing, url) {
-    return url.replace('[thing]', thing);
+    return url.replace('[thing]', encodeURIComponent(thing));
   }
   
   function goto(url) {
     window.location.replace(url); 
-  }
-  
-  function pianoChordCom(chordname) {
-    return 'http://www.pianochord.com/C-minor/variation/C-minor-6th'
   }
   
   function getUrlFromType(type) {
