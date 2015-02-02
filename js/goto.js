@@ -41,7 +41,7 @@ $(document).ready(function() {
     function getSixtyWeekday(date) {
         return Math.floor(parseInt(today.getTime() - sixtyEpoch.getTime()) / (1000* 60 * 60 * 24)) % 60;
     }
-    o = getSixtyWeekday(date);
+    o = (getSixtyWeekday(date)).toString();
   }
   var type = getParameterByName('t');
   var url = getParameterByName('u');
