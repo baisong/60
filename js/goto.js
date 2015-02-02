@@ -34,6 +34,14 @@ $(document).ready(function() {
   }
   
   var o = getParameterByName('o');
+  if (!o.length) {
+    var date = today.getDate();
+    var sixtyEpoch = new Date("December 27, 2014 00:00:00 GMT-08:00");
+    function getSixtyWeekday(date) {
+        return Math.floor(parseInt(today.getTime() - sixtyEpoch.getTime()) / (1000* 60 * 60 * 24)) % 60;
+    }
+    o = getSixtyWeekday(date);
+  }
   var type = getParameterByName('t');
   var url = getParameterByName('u');
   if (o.length && type.length) {
