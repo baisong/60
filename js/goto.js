@@ -35,6 +35,7 @@ $(document).ready(function() {
   
   var o = getParameterByName('o');
   if (!o.length) {
+    var today = new Date();
     var date = today.getDate();
     var sixtyEpoch = new Date("December 27, 2014 00:00:00 GMT-08:00");
     function getSixtyWeekday(date) {
