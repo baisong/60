@@ -22,6 +22,8 @@ $(document).ready(function() {
   function getUrlFromType(type) {
     var urls = {
       country: 'https://maps.google.com/?q=[thing]',
+      // country news: https://www.google.com/#q=[thing]&tbm=nws&tbs=qdr:w
+      // encoded: https%3A%2F%2Fwww.google.com%2F%23q%3D%5Bthing%5D%26tbm%3Dnws%26tbs%3Dqdr%3Aw
       person: 'http://en.wikipedia.org/wiki/[thing]',
       chord: 'http://www.google.com/#q=site:pianochord.com+[thing]&btnI=I'
     };
