@@ -6,7 +6,7 @@ $(document).ready(function() {
         var s454 = today.toSymmetry454();
         var yearnum = s454[0];
         var monthnum = s454[1]
-        var weeks_in_month = ((s454 % 3) == 2) ? 5 : 4;
+        var weeks_in_month = ((monthnum % 3) == 2) ? 5 : 4;
         var weeknum = s454[2];
         var daynum = s454[3];
         var weekday = (today.getDay() + 6) % 7;
