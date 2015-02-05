@@ -161,6 +161,18 @@ Sixty.country = function() {
         'Burkina Faso'
     ];
 }
+Sixty.tokipona = function() {
+  return ["e,li","a,o","sona,toki","ike,pona","mi,sina","la,pi","ni,ona","jan,soweli",
+    "kama,tawa","ala,ali","ken,wile","ma,tenpo","anu,en","mute,nanpa","lon,sin",
+    "lili,suli","tu,wan","lawa,pilin","ijo,kulupu","seme,tan","nasin,tomo",
+    "lape,pali","moku,pan","kalama,kute","jo,noka","lukin,uta","ante,sama",
+    "luka,poka","kon,telo","meli,mije","ilo,kepeken","mama,pana","kiwen,ko",
+    "mu,nimi","nasa,wawa","kili,unpa","lipu,sitelen","olin,utala","open,pini",
+    "moli,pakala","lupa,nena","pu,taso","mun,suno","awen,weka","kasi,laso",
+    "pimeja,walo","anpa,sewi","alasa,musi","jelo,loje","kule,sijelo","insa,selo",
+    "linja,sike","len,poki","kala,waso","monsi,sinpin","palisa,supa","lete,seli",
+    "jaki,suwi","akesi,pipi","esun,mani"];
+}
 Sixty.chord = function() {
     return [
         'C', 'Am7', 'Fm6', 'G7', 'Cmaj7',
