@@ -12,17 +12,17 @@ $(document).ready(function() {
         var weekday = (today.getDay() + 6) % 7;
         var html = '<table class="week"><tr>';
         for (var h = 0; h < weeks_in_month; h++) {
-        for (var i = 0; i < 7; i++) {
-            if (i == weekday && ((h + 1) == weeknum)) {
-                html += '<td class="day active"></td>';
+            for (var i = 0; i < 7; i++) {
+                if (i == weekday && ((h + 1) == weeknum)) {
+                    html += '<td class="day active"></td>';
+                }
+                else {
+                    html += '<td class="day"></td>';
+                }
+                if (i == 6) {
+                	html += '</tr><tr>'
+                }
             }
-            else {
-                html += '<td class="day"></td>';
-            }
-            if (i == 6) {
-            	html += '</tr><tr>'
-            }
-        }
         }
         html += '</td></tr></table>'
         things.push(html);
@@ -90,6 +90,7 @@ $(document).ready(function() {
         if (sixtyWeekday > 0) {
         	ord = (sixtyWeekday + 1) + nth(sixtyWeekday + 1);
         }
+        things.push('toki pona: ' + Sixty.get(sixtyWeekday, 'tokipona'));
         things.push(ord + " largest country?");
         var country = Sixty.get(sixtyWeekday, 'country');
         things.push(ord + " largest country:<br/>" + country);
