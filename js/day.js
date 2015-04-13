@@ -5,7 +5,7 @@ $(document).ready(function() {
         var today = new Date();
         var symDate = symmetrical.convert(today, 'object');
         var html = '<table class="week"><tr>';
-        for (var h = 0; h < symDate.weeksInMonth; h++) {
+        for (var h = 0; h < (symDate.daysInMonth / 7); h++) {
             for (var i = 0; i < 7; i++) {
                 if (i == symDate.dayOfWeek && ((h + 1) == symDate.weekOfMonth)) {
                     html += '<td class="day active"></td>';
@@ -21,8 +21,8 @@ $(document).ready(function() {
         html += '</td></tr></table>'
         things.push(html);
         // Day of the week
-        things.push(html + '<br/>' + symDate.dayOfWeek);
-        things.push(html + '<br/>' + symDate.dayOfWeek + "<br/>" + symDate.standard);
+        things.push(html + '<br/>' + symDate.dayOfWeekLong);
+        things.push(html + '<br/>' + symDate.dayOfWeekLong + "<br/>" + symDate.standard);
         // DOW + Date
         var month = today.getMonth();
         var year = today.getFullYear();
@@ -45,7 +45,7 @@ $(document).ready(function() {
             "April", "May", "June", "July", "August", "September",
             "October", "November", "December"
         ];
-        things.push(html + '<br/>' + symDate.dayOfWeek + "<br/>" + months[month] + " " + date + nth(date) + ", " + year);
+        things.push(html + '<br/>' + symDate.dayOfWeekLong + "<br/>" + months[month] + " " + date + nth(date) + ", " + year);
         // TODO Season diagram
         // Short weekdate notation
         // Long weekdate notation
