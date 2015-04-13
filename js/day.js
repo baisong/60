@@ -3,6 +3,7 @@ $(document).ready(function() {
         var things = [];
         // Weekday diagram
         var today = new Date();
+        today.setHours(0,0,0,0);
         var symDate = symmetrical.convert(today, 'object');
         var html = '<table class="week"><tr>';
         for (var h = 0; h < (symDate.daysInMonth / 7); h++) {
