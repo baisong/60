@@ -7,7 +7,7 @@ $(document).ready(function() {
         var symDate = symmetrical.convert(today, 'object');
         var html = '<table class="week"><tr>';
         for (var h = 0; h < (symDate.daysInMonth / 7); h++) {
-            for (var i = 0; i < 7; i++) {
+            for (var i = 1; i <= 7; i++) {
                 if (i == symDate.dayOfWeek && ((h + 1) == symDate.weekOfMonth)) {
                     html += '<td class="day active"></td>';
                 }
