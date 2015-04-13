@@ -14,7 +14,7 @@ $(document).ready(function() {
                 else {
                     html += '<td class="day"></td>';
                 }
-                if (i == 6) {
+                if (i == 7) {
                 	html += '</tr><tr>'
                 }
             }
