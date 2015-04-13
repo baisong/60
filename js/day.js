@@ -45,7 +45,7 @@ $(document).ready(function() {
             "April", "May", "June", "July", "August", "September",
             "October", "November", "December"
         ];
-        things.push(html + '<br/>' + weekdays[weekday] + "<br/>" + months[month] + " " + date + nth(date) + ", " + year);
+        things.push(html + '<br/>' + symDate.dayOfWeek + "<br/>" + months[month] + " " + date + nth(date) + ", " + year);
         // TODO Season diagram
         // Short weekdate notation
         // Long weekdate notation
