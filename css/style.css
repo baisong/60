@@ -18,15 +18,16 @@ body {
     margin: 100px auto;
 }
 
-.week td {
+.calendar td {
     border: 1px solid black;
     height: 97px;
 }
 
-.week .active {
+.calendar .active {
     background-color: black;
 }
 
-.week {
+.calendar {
+    border-collapse: collapse;
     width: 100%;
 }
