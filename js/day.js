@@ -5,7 +5,7 @@ $(document).ready(function() {
         var today = new Date();
         today.setHours(0,0,0,0);
         var symDate = symmetrical.convert(today, 'object');
-        var html = '<table class="week"><tr>';
+        var html = '<table class="calendar"><tr>';
         for (var h = 0; h < (symDate.daysInMonth / 7); h++) {
             for (var i = 1; i <= 7; i++) {
                 if (i == symDate.dayOfWeek && ((h + 1) == symDate.weekOfMonth)) {
