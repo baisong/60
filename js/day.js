@@ -9,10 +9,10 @@ $(document).ready(function() {
         for (var h = 0; h < (symDate.daysInMonth / 7); h++) {
             for (var i = 1; i <= 7; i++) {
                 if (i == symDate.dayOfWeek && ((h + 1) == symDate.weekOfMonth)) {
-                    html += '<td class="day active"></td>';
+                    html += '<td class="day day-' + i + ' active"></td>';
                 }
                 else {
-                    html += '<td class="day"></td>';
+                    html += '<td class="day day-' + i + '"></td>';
                 }
                 if (i == 7) {
                 	html += '</tr><tr>'
