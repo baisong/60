@@ -31,3 +31,7 @@ body {
     border-collapse: collapse;
     width: 100%;
 }
+
+.day-6, .day-7 {
+    background-color: #ccc;
+}
