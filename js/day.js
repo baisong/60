@@ -131,7 +131,7 @@ $(document).ready(function() {
         return Math.floor(parseInt(date.getTime() - sixtyEpoch.getTime()) / (1000* 60 * 60 * 24)) % 60;
     }
     var sixtyWeekday = getSixtyWeekday(today);
-    console.log(sixtyWeekday);
+    document.title = sixtyWeekday;
     $("#message").html("ready");
     $('body').keyup(proceed);
     $('body').on('tap', proceed2);
