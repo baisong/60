@@ -123,6 +123,15 @@ $(document).ready(function() {
             }
     };
     
+
+    var today = new Date();
+    today.setHours(0,0,0,0);
+    var sixtyEpoch = new Date("December 27, 2014 00:00:00");
+    function getSixtyWeekday(date) {
+        return Math.floor(parseInt(date.getTime() - sixtyEpoch.getTime()) / (1000* 60 * 60 * 24)) % 60;
+    }
+    var sixtyWeekday = getSixtyWeekday(today.getDate());
+    console.log(sixtyWeekday);
     $("#message").html("ready");
     $('body').keyup(proceed);
     $('body').on('tap', proceed2);
