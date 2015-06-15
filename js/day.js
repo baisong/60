@@ -68,7 +68,7 @@ $(document).ready(function() {
         var today = new Date('April 25, 2015 00:00:00');
         console.log(today);
         console.log(sixtyWeekday(today)); */
-
+        document.title = sixtyWeekday;
         var rows = Sixty.get(sixtyWeekday)
         things.push(rows);
         rows += "<br/>" + Sixty.get(sixtyWeekday, 'syllable');
