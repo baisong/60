@@ -126,7 +126,7 @@ $(document).ready(function() {
     var getTableForOffset = function(offset, char) {
         var output = '<table>';
         var rowLength = 12;
-        foreach (var i = 0; i < 60; i++) {
+        for (var i = 0; i < 60; i++) {
             if (i % rowLength == 0) {
                 output += '<tr>';
             }
