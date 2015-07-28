@@ -129,12 +129,14 @@ $(document).ready(function() {
         var output = '<table>';
         var rowLength = 12;
         for (var i = 0; i < 60; i++) {
+            var thisChar = '';
+            if (i == offset) {
+                thisChar = char;
+            }
             if (i % rowLength == 0) {
                 output += '<tr>';
             }
-            if (i == offset) {
-                output += '<td>' + char + '</td>';
-            }
+            output += '<td>' + thisChar + '</td>';
             if (i % rowLength == 11) {
                 output += '</tr>'
             }
