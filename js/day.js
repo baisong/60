@@ -72,6 +72,8 @@ $(document).ready(function() {
         var rows = Sixty.get(sixtyWeekday)
         things.push(rows);
         var table = getTableForOffset(sixtyWeekday, rows);
+        rows += table;
+        things.push(rows);
         rows += "<br/>" + Sixty.get(sixtyWeekday, 'syllable');
         things.push(rows);
         // @TODO chinese full number name
