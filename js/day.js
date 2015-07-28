@@ -71,6 +71,7 @@ $(document).ready(function() {
         document.title = sixtyWeekday;
         var rows = Sixty.get(sixtyWeekday)
         things.push(rows);
+        var table = this.getTableForOffset(sixtyWeekday, rows);
         rows += "<br/>" + Sixty.get(sixtyWeekday, 'syllable');
         things.push(rows);
         // @TODO chinese full number name
@@ -122,7 +123,23 @@ $(document).ready(function() {
                 $m.text('all set!');
             }
     };
-    
+    var getTableForOffset = function(offset, char) {
+        var output = '<table>';
+        var rowLength = 12;
+        foreach (var i = 0; i < 60; i++) {
+            if (i % rowLength == 0) {
+                output += '<tr>';
+            }
+            if (i == offset) {
+                output += '<td>' + char + '</td>';
+            }
+            if (i % rowLength == 11) {
+                output += '</tr>'
+            }
+        }
+        output += '</table>';
+        return output;
+    };
 
     var today = new Date();
     today.setHours(0,0,0,0);
