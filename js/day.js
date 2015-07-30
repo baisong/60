@@ -126,7 +126,7 @@ $(document).ready(function() {
             }
     };
     var getTableForOffset = function(offset, char) {
-        var output = '<table>';
+        var output = '<table class="grid-60">';
         var rowLength = 12;
         for (var i = 0; i < 60; i++) {
             var thisChar = '';
