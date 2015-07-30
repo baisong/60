@@ -35,3 +35,16 @@ body {
 .day-6, .day-7 {
     background-color: #eee;
 }
+
+.grid-60 td {
+    border: 1px solid black;
+    height: 30px;
+    width: 25px;
+}
+
+.grid-60 {
+    border-collapse: collapse;
+    width: 50%;
+    margin: 0 25%;
+}
+
