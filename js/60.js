@@ -174,20 +174,15 @@ Sixty.tokipona = function() {
     "jaki,suwi","akesi,pipi","esun,mani"];
 }
 Sixty.chord = function() {
-    return [
-        'C', 'Am7', 'Fm6', 'G7', 'Cmaj7',
-        'F', 'Dm7', 'Bbm6', 'C7', 'Fmaj7',
-        'Bb', 'Gm7', 'Ebm6', 'F7', 'Bbmaj7',
-        'Eb', 'Cm7', 'Abm6', 'Bb7', 'Ebmaj7',
-        'Ab', 'Fm7', 'Dbm6', 'Eb7', 'Abmaj7',
-        'Db', 'Bbm7', 'Gbm6', 'Ab7', 'Dbmaj7',
-        'F#', 'D#m7', 'Bm6', 'C#7', 'F#maj7',
-        'B', 'G#m7', 'Em6', 'F#7', 'Bmaj7',
-        'E', 'C#m7', 'Am6', 'B7', 'Emaj7',
-        'A', 'F#m7', 'Dm6', 'E7', 'Amaj7',
-        'D', 'Bm7', 'Gm6', 'A7', 'Dmaj7',
-        'G', 'Em7', 'Cm6', 'D7', 'Gmaj7',
-    ];
+    var keys = ['C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B'];
+    var names = [' major', ' major 7th', '7', ' minor 7th', 'm6'];
+    var ret = [];
+    for (var i = 0; i < 60; i++) {
+        var d = i / 12;
+        var r = i % 12;
+        ret.push(keys[d] + names[r]);
+    }
+    return ret;
 }
 Sixty.name = function() {
     return [];
