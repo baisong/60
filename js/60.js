@@ -178,9 +178,9 @@ Sixty.chord = function() {
     var names = [' major', ' major 7th', '7', ' minor 7th', 'm6'];
     var ret = [];
     for (var i = 0; i < 60; i++) {
-        var d = i / 12;
-        var r = i % 12;
-        ret.push(keys[d] + names[r]);
+        var k = Math.floor(i / 12);
+        var n = i % 12;
+        ret.push(keys[k] + names[n]);
     }
     return ret;
 }
