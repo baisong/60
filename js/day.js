@@ -5,7 +5,21 @@ $(document).ready(function() {
         var today = new Date();
         today.setHours(0,0,0,0);
         var symDate = symmetrical.convert(today, 'object');
-        var html = '<table class="calendar"><tr>';
+        var yearmonths = '<table class="yearmonths">';
+        for (var i = 0; i < 3; i++) {
+            yearmonths += '<tr>';
+            for var (j = 0; j < 4; j++) {
+                var classes = name = '';
+                if (j == (symDate.quarter - 1) && i == (symDate.monthOfQuarter - 1)) {
+                    classes = 'active';
+                    name = symDate.monthShort;
+                }
+                yearmonths += '<td class="' + classes + '">' + name + '</td>';
+            }
+            yearmonths += '</tr>';
+        }
+        yearmonths += '</table>';
+        var html = yearmonths + '<table class="calendar"><tr>';
         for (var h = 0; h < (symDate.daysInMonth / 7); h++) {
             for (var i = 1; i <= 7; i++) {
                 if (i == symDate.dayOfWeek && ((h + 1) == symDate.weekOfMonth)) {
