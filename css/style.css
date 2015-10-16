@@ -81,3 +81,11 @@ body {
     color: transparent;
     font-weight: bold;
 }
+
+.shrouded {
+    color: transparent !important;
+}
+
+.exposed {
+    color: white !important;
+}
