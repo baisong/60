@@ -1,3 +1,9 @@
+/** FIXME move to symmetrical.js */
+getWeekdayShort = function(num) {
+    var letters = '_MTWHFAS';
+    return letters[num];
+}
+
 $(document).ready(function() {
     var getThings = function() {
         var things = [];
@@ -23,7 +29,10 @@ $(document).ready(function() {
         for (var h = 0; h < (symDate.daysInMonth / 7); h++) {
             for (var i = 1; i <= 7; i++) {
                 if (i == symDate.dayOfWeek && ((h + 1) == symDate.weekOfMonth)) {
-                    html += '<td class="day day-' + i + ' active"></td>';
+                    var weekdayShort = getWeekdayShort(symDate.dayOfWeek);
+                    var dayname = symDate.weekOfMonth + symDate.weekOfMonthSuffix + ' ' + symDate.dayOfWeekShort;
+                    var text = '<h3>' + symDate.weekOfMonth + weekdayShort + '</h3><p>' + dayname + '</p>';
+                    html += '<td class="day day-' + i + ' active">' + text + '</td>';
                 }
                 else {
                     html += '<td class="day day-' + i + '"></td>';
