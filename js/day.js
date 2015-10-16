@@ -20,7 +20,7 @@ $(document).ready(function() {
                     classes = 'active';
                     name = symDate.monthShort;
                 }
-                yearmonths += '<td class="' + classes + '">' + name + '</td>';
+                yearmonths += '<td class="shrouded ' + classes + '">' + name + '</td>';
             }
             yearmonths += '</tr>';
         }
@@ -32,7 +32,7 @@ $(document).ready(function() {
                     var weekdayShort = getWeekdayShort(symDate.dayOfWeek);
                     var dayname = symDate.weekOfMonth + symDate.weekOfMonthSuffix + ' ' + symDate.dayOfWeekShort;
                     var text = '<h3>' + symDate.weekOfMonth + weekdayShort + '</h3><p>' + dayname + '</p>';
-                    html += '<td class="day day-' + i + ' active">' + text + '</td>';
+                    html += '<td class="day day-' + i + ' shrouded active">' + text + '</td>';
                 } else {
                     html += '<td class="day day-' + i + '"><h3>&nbsp</h3><p>&nbsp</p></td>';
                 }
@@ -44,7 +44,7 @@ $(document).ready(function() {
         html += '</td></tr></table>'
         things.push(html);
         // Day of the week
-        things.push('reveal!');
+        html = html.replace('shrouded', 'exposed');
         things.push(html + '<br/>' + symDate.dayOfWeekLong + "," + symDate.standard);
         // DOW + Date
         var month = today.getMonth();
@@ -123,11 +123,7 @@ $(document).ready(function() {
             var things = getThings();
             var $m = $('#message');
             var offset = parseInt($m.data('offset')) + 1;
-            if (things[offset] == 'reveal!') {
-                $('.calendar td').css({color: 'white'});
-                $('.yearmonths td').css({color: 'white'});
-            }
-            else if ((offset < things.length) && (things[offset].length > 0)) {
+            if ((offset < things.length) && (things[offset].length > 0)) {
                 $m.html(things[offset]);
                 $m.data('offset', offset);
             } else {
