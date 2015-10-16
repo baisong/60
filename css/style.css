@@ -30,6 +30,7 @@ body {
 }
 
 .calendar h3, .calendar p {
+    color: transparent;
     margin:0;    
 }
 
