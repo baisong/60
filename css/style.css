@@ -24,11 +24,11 @@ body {
 .calendar td {
     border: 1px solid white;
     height: 97px;
-    background-color: #81D4FA;
+    background-color: #B3E5FC;
 }
 
 .calendar .active {
-    background-color: black !important;
+    background-color: #4FC3F7 !important;
 }
 
 .calendar {
@@ -38,6 +38,10 @@ body {
 
 .calendar td.day-6, .calendar td.day-7 {
     background-color: #03A9F4;
+}
+
+.calendar td.day-6.active, .calendar td.day-7.active {
+    background-color: #0288D1;
 }
 
 .grid-60 td {
