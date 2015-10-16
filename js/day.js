@@ -44,8 +44,8 @@ $(document).ready(function() {
         html += '</td></tr></table>'
         things.push(html);
         // Day of the week
-        html = html.replace('shrouded', 'exposed');
-        things.push(html + '<br/>' + symDate.dayOfWeekLong + "," + symDate.standard);
+        html = html.replace(/shrouded/g, 'exposed');
+        things.push(html);
         // DOW + Date
         var month = today.getMonth();
         var year = today.getFullYear();
@@ -68,7 +68,7 @@ $(document).ready(function() {
             "April", "May", "June", "July", "August", "September",
             "October", "November", "December"
         ];
-        things.push(html + '<br/>' + symDate.dayOfWeekLong + "<br/>" + months[month] + " " + date + nth(date) + ", " + year);
+        things.push(html + '<br/>' + symDate.dayOfWeekLong + ", " + months[month] + " " + date + nth(date) + ", " + year);
         // TODO Season diagram
         // Short weekdate notation
         // Long weekdate notation
