@@ -35,7 +35,7 @@ $(document).ready(function() {
                     html += '<td class="day day-' + i + ' active">' + text + '</td>';
                 }
                 else {
-                    html += '<td class="day day-' + i + '"></td>';
+                    html += '<td class="day day-' + i + '"><h3>&nbsp</h3><p>&nbsp</p></td>';
                 }
                 if (i == 7) {
                 	html += '</tr><tr>'
