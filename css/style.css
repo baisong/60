@@ -33,6 +33,10 @@ body {
     margin:0;    
 }
 
+.calendar h3 {
+    font-size: 3em;
+}
+
 .calendar .active {
     background-color: #4FC3F7;
 }
