@@ -25,6 +25,12 @@ body {
     border: 1px solid white;
     height: 97px;
     background-color: #B3E5FC;
+    width: 14.286%;
+    text-align: center;
+}
+
+.calendar h3, .calendar p {
+    margin:0;    
 }
 
 .calendar .active {
