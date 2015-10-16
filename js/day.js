@@ -8,7 +8,7 @@ $(document).ready(function() {
         var yearmonths = '<table class="yearmonths">';
         for (var i = 0; i < 3; i++) {
             yearmonths += '<tr>';
-            for var (j = 0; j < 4; j++) {
+            for (var j = 0; j < 4; j++) {
                 var classes = name = '';
                 if (j == (symDate.quarter - 1) && i == (symDate.monthOfQuarter - 1)) {
                     classes = 'active';
