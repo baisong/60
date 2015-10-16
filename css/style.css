@@ -57,3 +57,14 @@ body {
     margin: 0 25%;
 }
 
+.yearmonths td {
+    background-color: #CFD8DC;
+    width: 200px;
+    height: 50px;
+}
+
+.yearmonths td.active {
+    text-transform: uppercase;
+    text-align: center;
+    background-color: #90A4AE;
+}
