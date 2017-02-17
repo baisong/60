@@ -11,6 +11,22 @@ $(document).ready(function() {
         var today = new Date();
         today.setHours(0, 0, 0, 0);
         var symDate = symmetrical.convert(today, 'object');
+        var html = '<table class="yearmonths">';
+        for (var i = 0; i < 4; i++) {
+            html += '<tr>';
+            for var j = 0; j < 14; j++) {
+                var classes = name = 'tt';
+                if (j == (symDate.quarter - 1) && i == (symDate.monthOfQuarter - 1)) {
+                    //classes = 'active';
+                    //name = symDate.monthShort;
+                }
+                html += '<td class="shrouded ' + classes + '">' + name + '</td>';
+            }
+            html += '</tr>';
+        }
+        html += '</table>';
+        // Build small 12-month grid
+        /*
         var yearmonths = '<table class="yearmonths">';
         for (var i = 0; i < 3; i++) {
             yearmonths += '<tr>';
@@ -25,6 +41,10 @@ $(document).ready(function() {
             yearmonths += '</tr>';
         }
         yearmonths += '</table>';
+        */
+        
+        // Build full month grid
+        /*
         var html = yearmonths + '<table class="calendar"><tr>';
         for (var h = 0; h < (symDate.daysInMonth / 7); h++) {
             for (var i = 1; i <= 7; i++) {
@@ -42,6 +62,7 @@ $(document).ready(function() {
             }
         }
         html += '</td></tr></table>'
+        */
         things.push(html);
         // Day of the week
         html = html.replace(/shrouded/g, 'exposed');
