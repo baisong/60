@@ -11,7 +11,18 @@ body {
     border: none;
     background:#ddd;
 }
-
+.wrap-month-1, .wrap-month-3 {
+    width: 30.76923%;
+}
+.wrap-month-2 {
+    width: 38.46154%;
+}
+.wrap-month.inactive {
+    background: #d7d7d7;
+}
+.wrap-month.active {
+    border: 1px solid gray;
+}
 #page {
     margin: 20px auto;
     width: 800px;
