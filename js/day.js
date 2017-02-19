@@ -11,20 +11,25 @@ $(document).ready(function() {
         var today = new Date();
         today.setHours(0, 0, 0, 0);
         var symDate = symmetrical.convert(today, 'object');
-        var html = '<table class="yearmonths">';
+        var html = '<div class="wrap-year">';
         for (var i = 0; i < 4; i++) {
-            html += '<tr>';
-            for (var j = 0; j < 14; j++) {
-                var classes = name = 'tt';
-                if (j == (symDate.quarter - 1) && i == (symDate.monthOfQuarter - 1)) {
-                    //classes = 'active';
-                    //name = symDate.monthShort;
-                }
-                html += '<td class="shrouded ' + classes + '">' + name + '</td>';
+            var classes = 'inactive';
+            if (i == (symDate.quarter - 1)) {
+                classes = 'active';
             }
-            html += '</tr>';
+            html += '<div class="wrap-quarter ' + classes' + ">';
+            for (var j = 0; j < 14; j++) {
+                var classes = 'inactive';
+                var date = '';
+                if (j == (symDate.quarter - 1) && i == (symDate.monthOfQuarter - 1)) {
+                    classes = 'active';
+                    date = symDate.monthShort;
+                }
+                html += '<div class="shrouded week-wrap ' + classes + '">' + date + '</div>';
+            }
+            html += '</div>';
         }
-        html += '</table>';
+        html += '</div>';
         // Build small 12-month grid
         /*
         var yearmonths = '<table class="yearmonths">';
