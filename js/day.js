@@ -14,7 +14,7 @@ $(document).ready(function() {
         var html = '<table class="yearmonths">';
         for (var i = 0; i < 4; i++) {
             html += '<tr>';
-            for var j = 0; j < 14; j++) {
+            for (var j = 0; j < 14; j++) {
                 var classes = name = 'tt';
                 if (j == (symDate.quarter - 1) && i == (symDate.monthOfQuarter - 1)) {
                     //classes = 'active';
