@@ -2,6 +2,12 @@ body {
     background-color: #f0f0f0;
 }
 
+.wrap-quarter {
+    width:100%;
+    border: 1px solid gray;
+    height: 10%;
+}
+
 #page {
     margin: 20px auto;
     width: 800px;
