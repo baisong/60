@@ -7,6 +7,10 @@ body {
     border: 1px solid gray;
     height: 10%;
 }
+.wrap-quarter.inactive {
+    border: none;
+    background:#ddd;
+}
 
 #page {
     margin: 20px auto;
