@@ -17,7 +17,7 @@ $(document).ready(function() {
             if (i == (symDate.quarter - 1)) {
                 classes = 'active';
             }
-            html += '<div class="wrap-quarter ' + classes' + ">';
+            html += '<div class="wrap-quarter ' + classes + ">';
             for (var j = 0; j < 14; j++) {
                 var classes = 'inactive';
                 var date = '';
