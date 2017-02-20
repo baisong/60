@@ -19,10 +19,14 @@ $(document).ready(function() {
             }
             html += '<div class="wrap-quarter ' + classes + '">';
             var monthNum = 0;
+            var weekOfMonth = 0;
             for (var j = 0; j < 13; j++) {
-                if (j == 0) monthNum = 1;
-                if (j == 4) monthNum = 2;
-                if (j == 9) monthNum = 3;
+                if (j == 0 || j == 4 || j == 9) {
+                    if (j == 0) monthNum = 1;
+                    if (j == 4) monthNum = 2;
+                    if (j == 9) monthNum = 3;
+                    weekOfMonth = 1;
+                }
                 classes = 'inactive';
                 if (symDate.monthOfQuarter == monthNum && i == (symDate.quarter - 1)) {
                     classes = 'active';
@@ -37,10 +41,14 @@ $(document).ready(function() {
                     classes = 'active';
                     date = symDate.monthShort;
                 }
+                if (symDate.weekOfMonth == weekOfMonth) {
+                classes += " active";
+                }
                 html += '<div class="shrouded week-wrap ' + classes + '">' + date + '</div>';
                 if (j == 3 || j == 8 || j == 12) {
                     html += '</div>';
                 }
+                weekOfMonth++;
                 monthNum = 0;
             }
             html += '</div>';
