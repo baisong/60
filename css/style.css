@@ -4,12 +4,17 @@ body {
 
 .wrap-quarter {
     width:100%;
-    border: 1px solid gray;
-    height: 10%;
+    height: 100px;
 }
 .wrap-quarter.inactive {
     border: none;
     background: #d7d7d7;
+}
+.wrap-quarter.active {
+    margin-left: -1px;
+    margin-right: -1px;
+    margin-top: -1px;
+    border: 1px solid gray;
 }
 .wrap-month-1, .wrap-month-3 {
     width: 30.76923%;
@@ -24,10 +29,10 @@ body {
     background: #ddd;
 }
 .wrap-quarter.active .wrap-month.active {
-    border: 1px solid gray;
-    margin-left: -1px;
-    margin-right: -1px;
-    margin-top: -1px;
+    border: 2px solid gray;
+    margin-left: -2px;
+    margin-right: -2px;
+    margin-top: -2px;
 }
 .wrap-month {
     float: left;
