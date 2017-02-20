@@ -34,7 +34,7 @@ body {
     margin-right: -2px;
     margin-top: -2px;
 }
-.wrap-month {
+.wrap-month, .wrap-week {
     float: left;
     height: 100%;
 }
@@ -43,6 +43,13 @@ body {
     margin-left: -3px;
     margin-right: -3px;
     margin-top: -3px;
+}
+
+.wrap-month-2 .wrap-week {
+    width: 20%;
+}
+.wrap-month-1 .wrap-week, .wrap-month-3 .wrap-week {
+    width: 25%;
 }
 #page {
     margin: 20px auto;
