@@ -18,7 +18,15 @@ $(document).ready(function() {
                 classes = 'active';
             }
             html += '<div class="wrap-quarter ' + classes + '">';
+            var monthNum = 0;
             for (var j = 0; j < 14; j++) {
+                if (j == 0) monthNum = 1;
+                if (j == 4) monthNum = 2;
+                if (j == 9) monthNum = 3;
+                if (monthNum > 0) {
+                    html += '<div class="wrap-month wrap-month-' + monthNum + '">'; 
+                }
+                console.log(symDate);
                 var classes = 'inactive';
                 var date = '';
                 if (j == (symDate.quarter - 1) && i == (symDate.monthOfQuarter - 1)) {
@@ -26,48 +34,14 @@ $(document).ready(function() {
                     date = symDate.monthShort;
                 }
                 html += '<div class="shrouded week-wrap ' + classes + '">' + date + '</div>';
+                if (j == 3 || j == 8 || j == 12) {
+                    html += '</div>';
+                }
+                monthNum = 0;
             }
             html += '</div>';
         }
         html += '</div>';
-        // Build small 12-month grid
-        /*
-        var yearmonths = '<table class="yearmonths">';
-        for (var i = 0; i < 3; i++) {
-            yearmonths += '<tr>';
-            for (var j = 0; j < 4; j++) {
-                var classes = name = '';
-                if (j == (symDate.quarter - 1) && i == (symDate.monthOfQuarter - 1)) {
-                    classes = 'active';
-                    name = symDate.monthShort;
-                }
-                yearmonths += '<td class="shrouded ' + classes + '">' + name + '</td>';
-            }
-            yearmonths += '</tr>';
-        }
-        yearmonths += '</table>';
-        */
-        
-        // Build full month grid
-        /*
-        var html = yearmonths + '<table class="calendar"><tr>';
-        for (var h = 0; h < (symDate.daysInMonth / 7); h++) {
-            for (var i = 1; i <= 7; i++) {
-                if (i == symDate.dayOfWeek && ((h + 1) == symDate.weekOfMonth)) {
-                    var weekdayShort = getWeekdayShort(symDate.dayOfWeek);
-                    var dayname = symDate.weekOfMonth + symDate.weekOfMonthSuffix + ' ' + symDate.dayOfWeekShort;
-                    var text = '<h3>' + symDate.weekOfMonth + weekdayShort + '</h3><p>' + dayname + '</p>';
-                    html += '<td class="day day-' + i + ' shrouded active">' + text + '</td>';
-                } else {
-                    html += '<td class="day day-' + i + '"><h3>&nbsp</h3><p>&nbsp</p></td>';
-                }
-                if (i == 7) {
-                    html += '</tr><tr>'
-                }
-            }
-        }
-        html += '</td></tr></table>'
-        */
         things.push(html);
         // Day of the week
         html = html.replace(/shrouded/g, 'exposed');
