@@ -25,6 +25,9 @@ body {
 }
 .wrap-quarter.active .wrap-month.active {
     border: 1px solid gray;
+    margin-left: -1px;
+    margin-right: -1px;
+    margin-top: -1px;
 }
 .wrap-month {
     float: left;
