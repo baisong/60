@@ -20,10 +20,10 @@ body {
 .wrap-month-2 {
     width: 38.46154%;
 }
-.wrap-month.inactive {
+.wrap-quarter.active .wrap-month.inactive {
     background: #d7d7d7;
 }
-.wrap-month.active {
+.wrap-quarter.active .wrap-month.active {
     border: 1px solid gray;
 }
 .wrap-month {
