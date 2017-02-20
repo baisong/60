@@ -44,7 +44,7 @@ $(document).ready(function() {
                 if (symDate.weekOfMonth == weekOfMonth) {
                 classes += " active";
                 }
-                html += '<div class="shrouded week-wrap ' + classes + '">' + date + '</div>';
+                html += '<div class="shrouded wrap-week ' + classes + '">' + date + '</div>';
                 if (j == 3 || j == 8 || j == 12) {
                     html += '</div>';
                 }
