@@ -23,8 +23,12 @@ $(document).ready(function() {
                 if (j == 0) monthNum = 1;
                 if (j == 4) monthNum = 2;
                 if (j == 9) monthNum = 3;
+                classes = 'inactive';
+                if (symDate.monthOfQuarter == monthNum) {
+                    classes = 'active';
+                }
                 if (monthNum > 0) {
-                    html += '<div class="wrap-month wrap-month-' + monthNum + '">'; 
+                    html += '<div class="wrap-month wrap-month-' + monthNum + ' ' + classes + '">'; 
                 }
                 console.log(symDate);
                 var classes = 'inactive';
