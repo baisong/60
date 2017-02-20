@@ -24,7 +24,7 @@ $(document).ready(function() {
                 if (j == 4) monthNum = 2;
                 if (j == 9) monthNum = 3;
                 classes = 'inactive';
-                if (symDate.monthOfQuarter == monthNum) {
+                if (symDate.monthOfQuarter == monthNum && i == (symDate.quarter - 1)) {
                     classes = 'active';
                 }
                 if (monthNum > 0) {
