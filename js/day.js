@@ -19,7 +19,7 @@ $(document).ready(function() {
             }
             html += '<div class="wrap-quarter ' + classes + '">';
             var monthNum = 0;
-            for (var j = 0; j < 14; j++) {
+            for (var j = 0; j < 13; j++) {
                 if (j == 0) monthNum = 1;
                 if (j == 4) monthNum = 2;
                 if (j == 9) monthNum = 3;
