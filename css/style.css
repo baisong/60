@@ -12,10 +12,13 @@ body {
     background:#ddd;
 }
 .wrap-month-1, .wrap-month-3 {
-    width: 29.76923%;
+    width: 30.76923%;
+}
+.wrap-month-3 {
+    margin-right: -3px;
 }
 .wrap-month-2 {
-    width: 37.46154%;
+    width: 38.46154%;
 }
 .wrap-month.inactive {
     background: #d7d7d7;
